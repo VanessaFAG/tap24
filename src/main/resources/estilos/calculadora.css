@@ -1,0 +1,16 @@
+#color-operador{
+  -fx-text-fill: rgb(170,28,28);
+  -fx-background-color: linear-gradient(
+                       rgb(202,189,189),
+                       rgb(149,141,141)
+                       );
+}
+
+#color-igualdad{
+  -fx-text-fill: rgb(33,8,8);
+  -fx-background-color: linear-gradient(
+                       rgb(245,83,83),
+                       rgb(191,36,36)
+                       );
+
+}

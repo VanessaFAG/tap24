@@ -1,5 +1,41 @@
-.root{
+.root{/* Modifocar el escenario */
 
-  -fx-background-image:  url('https://images2.alphacoders.com/485/48522.jpg');
-
+  -fx-background-image:  url('https://images2.alphacoders.com/485/48522.jpg'), url('https://www.tecnm.mx/images/tecnm_virtual/tecnm.png');
+  -fx-background-size: 100%, 100px; /*tamaño del la imagen*/
+  -fx-background-repeat: no-repeat;/* para cuando la imagen es pequela y se repite*/
+  -fx-background-position: center, bottom right;
 }
+.menu-bar{
+
+  -fx-background-color: rgb(55,53,52);
+  -fx-border-color: rgb(141,136,136);
+  -fx-border-width: 2px;
+}
+.menu{
+  -fx-background-color: rgb(72,70,70);
+}
+
+.label{
+  -fx-background-color: rgb(99,94,94);
+  -fx-padding: 5;
+}
+
+.menu:hover{
+  -fx-background-color:rgb(18,17,17);
+}
+
+.label:hover{
+  -fx-background-color: rgb(40,47,47);
+  -fx-font-size: 10pt;
+}
+
+.menu-item{
+  -fx-background-color: rgb(72,70,70);
+  -fx-border-color: rgb(14,14,14);
+}
+
+.menu-item:hover{
+  -fx-background-color: rgb(14,14,14);
+  -fx-tex-fill: rgb(36,24,24);
+}
+

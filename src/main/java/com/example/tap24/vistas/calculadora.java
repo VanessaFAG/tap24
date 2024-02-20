@@ -13,10 +13,12 @@ public class calculadora extends Stage {
     private GridPane gdpTeclado;
     private TextField txtPantalla;
     private Button[][] arBotones = new Button[4][4];
-    private char[] arEtiquetas = {'7', '8', '9', '/',
-                                  '4','5','6','*',
-                                  '1','2','3','+',
-                                  '-','0','.','='};
+    private char[] arEtiquetas = {'7','8','9','+',
+                                  '4','5','6','-',
+                                  '1','2','3','*',
+                                  '=','0','.','/'};
+    double num1=0, num2=0, resultado=0;
+    char numActual=0, operFinal;
     public calculadora(){
         crearUI();
         this.setTitle("Mi primer trauma");
@@ -31,11 +33,12 @@ public class calculadora extends Stage {
         vContenedor = new VBox(txtPantalla, gdpTeclado);
         vContenedor.setSpacing(5);
         escena = new Scene(vContenedor, 200, 200);
+        escena.getStylesheets().add(getClass().getResource("/estilos/calculadora.css").toString());
     }
 
     private void crearTeclado() {
         int pos = 0;
-        char simbolo;  //creado para quitar un error en el event
+        //char simbolo;  //creado para quitar un error en el event
         for (int i =0; i < 4; i++){
             for (int j= 0; j < 4; j++){
                 arBotones[i][j] = new Button(arEtiquetas[pos] + "");
@@ -43,7 +46,15 @@ public class calculadora extends Stage {
                 int finalPos = pos; //pero le vale cheto y creamos un final
                 arBotones[i][j].setOnAction(event -> setValue(arEtiquetas [finalPos]));
                 gdpTeclado.add(arBotones[i][j],j,i);
+
+                if (arEtiquetas[pos] == '+' || arEtiquetas[pos] == '-' || arEtiquetas[pos] == '*' || arEtiquetas[pos] == '/') {
+                    arBotones[i][j].setId("color-operador");
+                }
+                if (arEtiquetas[pos] == '=') {
+                    arBotones[i][j].setId("color-igualdad");
+                }
                 pos++;
+
             }
         }
 

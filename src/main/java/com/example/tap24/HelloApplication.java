@@ -1,6 +1,7 @@
 package com.example.tap24;
 
 import com.example.tap24.vistas.calculadora;
+import com.example.tap24.vistas.memorama;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -15,7 +16,7 @@ public class HelloApplication extends Application {
 
     private MenuBar mBarPrincipal;
     private Menu menuPar1, menuPar2, menuSalir;
-    private MenuItem mItemCalculadora, mItSalir;
+    private MenuItem mItemCalculadora, mItemMemorama, mItSalir;
     private BorderPane bpPanel;
 
     @Override
@@ -38,9 +39,11 @@ public class HelloApplication extends Application {
 
         // Primer parcial
         mItemCalculadora = new MenuItem("Calculadora");
+        mItemCalculadora.setOnAction(event -> new calculadora());
+        mItemMemorama = new MenuItem("Memorama");
+        mItemMemorama.setOnAction(event -> new memorama());
         menuPar1 = new Menu("1° Parcial");
-        menuPar1.getItems().addAll(mItemCalculadora);
-        //menuPar1.getClass(calculadora());
+        menuPar1.getItems().addAll(mItemCalculadora, mItemMemorama);
 
         // Segundo parcial
         menuPar2 = new Menu("2° Parcial");
