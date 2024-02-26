@@ -3,7 +3,6 @@ package com.example.tap24;
 import com.example.tap24.vistas.calculadora;
 import com.example.tap24.vistas.memorama;
 import javafx.application.Application;
-import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.Menu;
 import javafx.scene.control.MenuBar;
@@ -28,7 +27,7 @@ public class HelloApplication extends Application {
         bpPanel.setTop(mBarPrincipal);
         Scene scene = new Scene(bpPanel);
         scene.getStylesheets().add(getClass().getResource("/estilos/main.css").toString());
-        stage.setTitle("Hello!");
+        stage.setTitle("Topicos 2024");
         stage.setScene(scene);
         stage.setMaximized(true);
         stage.show();

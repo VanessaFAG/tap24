@@ -72,11 +72,12 @@ public class calculadora extends Stage {
     }
     public void operadores(String txtOperador){
         if (txtOperador.matches("[0-9.]")){
-            /*if (txtOperador.equals("Math Error") || txtOperador.equals("Syntax Error")){
+            String texto = txtPantalla.getText();
+            if (texto.equals("Math Error") || texto.equals("Syntax Error")){
                 clean();
-            }else {*/
+            }else {
                 veriOperacion(txtOperador);
-        /*}*/
+            }
         }else
             if (txtOperador.equals("=")){
                 if (!numero.isEmpty() && operador.isEmpty()) {
