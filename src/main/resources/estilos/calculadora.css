@@ -1,16 +1,43 @@
-#color-operador{
+.root {
+    -fx-background-color: rgb(59,49,76);
+}
+.button.operador{
   -fx-text-fill: rgb(170,28,28);
   -fx-background-color: linear-gradient(
-                       rgb(202,189,189),
-                       rgb(149,141,141)
+                       rgb(149,141,141),
+                       rgb(120,119,119)
                        );
 }
+.button.operador: pressed{
+ -fx-text-fill: rgb(99,96,113);
+ -fx-background-color: rgb(67,64,82);
+}
 
-#color-igualdad{
+.button.borrar{
   -fx-text-fill: rgb(33,8,8);
   -fx-background-color: linear-gradient(
                        rgb(245,83,83),
-                       rgb(191,36,36)
-                       );
+                       rgb(191,36,36));
+}
+.button.borrar: pressed{
+ -fx-text-fill: rgb(138,88,88);
+ -fx-background-color: rgb(90,22,22);
+}
 
+.button.no{
+ -fx-text-fill: rgb(218,192,192);
+ -fx-background-color: rgb(51,50,50);
+}
+.button.no: pressed{
+ -fx-text-fill: rgb(218,192,192);
+ -fx-background-color: rgb(50,43,43);
+}
+
+.button.igual{
+ -fx-text-fill: rgb(222,138,104);
+ -fx-background-color: rgb(72,54,47);
+}
+.button.igual: pressed{
+ -fx-text-fill: rgb(222,138,104);
+ -fx-background-color: rgb(46,32,27);
 }

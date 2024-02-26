@@ -28,16 +28,17 @@ public class memorama extends Stage {
     public void CrearUI(){
         txtnoPares = new TextField("3");
         gpcartas = new GridPane();
-        vboxcontenedor = new VBox(gpcartas/*, pares*/);
         //players = new VBox(player1,player2);
-        crearpares();
+        //crearpares();
+        vboxcontenedor = new VBox(gpcartas/*, pares*/);
         hboxContenedor = new HBox(vboxcontenedor/*,players*/);
+
         escena = new Scene(hboxContenedor, 400, 500);
         //pares = new HBox(/*time*/ btnrevolver, txtnoPares);
 
     }
 
-    private void crearpares() {
+    /*private void crearpares() {
         String[] arimagen  = {"cerebro.jpg","pato.jpg"};
         Button[][] botoncarta = new Button[2][4];//esto depende de la cantidad de imagenes puestas
         ImageView imvCarta;
@@ -58,5 +59,5 @@ public class memorama extends Stage {
                 }
             }
         }
-    }
+    }*/
 }
