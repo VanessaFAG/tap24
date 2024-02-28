@@ -5,4 +5,7 @@ module com.example.tap24 {
 
     opens com.example.tap24 to javafx.fxml;
     exports com.example.tap24;
+
+    requires java.sql;
+    requires mariadb.java.client;
 }
