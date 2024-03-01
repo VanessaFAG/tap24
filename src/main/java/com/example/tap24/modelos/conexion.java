@@ -8,10 +8,11 @@ public class conexion {
     static private String usuario = "taquero";
     static private String password = "123";
     static public Connection  conexcion;
-    void createConexion(){
+    public static void createConexion(){
         try{
             Class.forName("org.mariadb.jdbc.Driver");
             conexcion = DriverManager.getConnection("jdbc:mariadb://localhost:3306/"+DB,usuario,password);
+            System.out.println("Conexcion exitosa");
         }catch (Exception e){
             e.printStackTrace();
         }

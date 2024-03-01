@@ -31,7 +31,7 @@ public class calculadora extends Stage {
     }
 
     private void crearUI() {
-        txtPantalla = new TextField("0");//valor inicial de la calculadora
+        txtPantalla = new TextField("");//valor inicial de la calculadora
         txtPantalla.setEditable(false);
         txtPantalla.setMaxWidth(Double.MAX_VALUE);
         gdpTeclado = new GridPane();
@@ -75,24 +75,22 @@ public class calculadora extends Stage {
             String texto = txtPantalla.getText();
             if (texto.equals("Math Error") || texto.equals("Syntax Error")){
                 clean();
-            }else {
+            }else if (txtOperador.equals(".") && numero.isEmpty()) {
+                txtPantalla.setText("Syntax Error");
+            }else{
                 veriOperacion(txtOperador);
             }
         }else
-            if (txtOperador.equals("=")){
-                if (!numero.isEmpty() && operador.isEmpty()) {
-                    double resultado = Double.parseDouble(numero);
-                    setResultado(resultado);
-                    numero = Double.toString(resultado);
-            }else
-                if (!numero.isEmpty() && !numero.equals(".")){
+        if (txtOperador.equals("=")){
+            if (!numero.isEmpty() && !operador.isEmpty()) {
                 num2 = Double.parseDouble(numero);
                 double resultado = doOperacion();
+                setResultado(resultado);
                 numero = Double.toString(resultado);
                 operador = "";
             }else{
-                    txtPantalla.setText("Syntax Error");
-                }
+                txtPantalla.setText("Syntax Error");
+            }
         }else
             if (txtOperador.matches("[/+*-]")) {
                 if (!numero.isEmpty() && !operador.isEmpty()) {
