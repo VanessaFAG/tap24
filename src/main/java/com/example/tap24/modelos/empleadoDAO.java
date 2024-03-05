@@ -1,5 +1,9 @@
 package com.example.tap24.modelos;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+
+import java.sql.ResultSet;
 import java.sql.Statement;
 
 public class empleadoDAO {
@@ -28,7 +32,35 @@ public class empleadoDAO {
         }
     }
     public void eliminar(){
-
+        String query = "delete from empleado where id_empleado="+id_emepleado;
+        try {
+            Statement statement = conexion.conexcion.createStatement();
+            statement.executeUpdate(query);
+        }catch (Exception e){
+            e.printStackTrace();
+        }
     }
-    public void consulta(){}
+    public ObservableList<empleadoDAO> consulta(){
+       ObservableList<empleadoDAO> listaEmp = FXCollections.observableArrayList();
+       String query = "select * from empleado";
+       try {
+           empleadoDAO objEmp;
+           Statement statement = conexion.conexcion.createStatement();
+           ResultSet resultSet = statement.executeQuery(query);
+           while (resultSet.next()){// regresa un booleano por si si lo acepto elcambio de lugar
+               objEmp = new empleadoDAO();
+               objEmp.id_emepleado = resultSet.getInt("id_empleado");
+               objEmp.nom_empleado =resultSet.getString("nom_empleado");
+               objEmp.rfc=resultSet.getString("rfc");
+               objEmp.salario=resultSet.getFloat("salario");
+               objEmp.telefono = resultSet.getString("telefono");
+               objEmp.direccion=resultSet.getString("direccion");
+               listaEmp.add(objEmp);
+           }
+       }catch (Exception e){
+           e.printStackTrace();
+       }
+
+       return listaEmp;
+    }
 }

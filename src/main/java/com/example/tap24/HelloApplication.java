@@ -3,6 +3,7 @@ package com.example.tap24;
 import com.example.tap24.modelos.conexion;
 import com.example.tap24.vistas.calculadora;
 import com.example.tap24.vistas.memorama;
+import com.example.tap24.modelos.empleadoTaqueria;
 import javafx.application.Application;
 import javafx.scene.Scene;
 import javafx.scene.control.Menu;
@@ -16,14 +17,12 @@ public class HelloApplication extends Application {
 
     private MenuBar mBarPrincipal;
     private Menu menuPar1, menuPar2, menuSalir;
-    private MenuItem mItemCalculadora, mItemMemorama, mItSalir;
+    private MenuItem mItemCalculadora, mItemMemorama, mItemEmpelado ,mItSalir;
     private BorderPane bpPanel;
 
     @Override
     public void start(Stage stage) throws IOException {
         crearMenu();
-        //FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("hello-view.fxml"));
-        //Scene scene = new Scene(fxmlLoader.load(), 320, 240);
         bpPanel = new BorderPane();
         bpPanel.setTop(mBarPrincipal);
         Scene scene = new Scene(bpPanel);
@@ -42,10 +41,15 @@ public class HelloApplication extends Application {
         // Primer parcial
         mItemCalculadora = new MenuItem("Calculadora");
         mItemCalculadora.setOnAction(event -> new calculadora());
+
         mItemMemorama = new MenuItem("Memorama");
         mItemMemorama.setOnAction(event -> new memorama());
+
+        mItemEmpelado = new MenuItem("Empleado");
+        mItemEmpelado.setOnAction(event -> new empleadoTaqueria());
+
         menuPar1 = new Menu("1° Parcial");
-        menuPar1.getItems().addAll(mItemCalculadora, mItemMemorama);
+        menuPar1.getItems().addAll(mItemCalculadora,mItemMemorama,mItemEmpelado);
 
         // Segundo parcial
         menuPar2 = new Menu("2° Parcial");
