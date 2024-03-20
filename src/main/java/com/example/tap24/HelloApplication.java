@@ -1,5 +1,6 @@
 package com.example.tap24;
 
+import com.example.tap24.vistas.pista;
 import com.example.tap24.modelos.conexion;
 import com.example.tap24.vistas.calculadora;
 import com.example.tap24.vistas.memorama;
@@ -17,7 +18,7 @@ public class HelloApplication extends Application {
 
     private MenuBar mBarPrincipal;
     private Menu menuPar1, menuPar2, menuSalir;
-    private MenuItem mItemCalculadora, mItemMemorama, mItemEmpelado ,mItSalir;
+    private MenuItem mItemCalculadora, mItemMemorama, mItemEmpelado, mItemPista,mItSalir;
     private BorderPane bpPanel;
 
     @Override
@@ -52,7 +53,11 @@ public class HelloApplication extends Application {
         menuPar1.getItems().addAll(mItemCalculadora,mItemMemorama,mItemEmpelado);
 
         // Segundo parcial
+        mItemPista = new MenuItem("Pista A.");
+        mItemPista.setOnAction(event -> new pista());
+
         menuPar2 = new Menu("2° Parcial");
+        menuPar2.getItems().addAll(mItemPista);
 
         // Menu salir
         mItSalir = new MenuItem("Salir");

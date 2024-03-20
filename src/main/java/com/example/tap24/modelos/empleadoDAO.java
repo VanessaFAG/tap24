@@ -7,9 +7,54 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 
 public class empleadoDAO {
-    int id_emepleado;
-    String nom_empleado, direccion, rfc, telefono;
-    float salario;
+    private int id_emepleado;
+    private String nom_empleado;
+    private String rfc;
+    private float salario;
+    private String telefono;
+    private String direccion;
+
+    public int getId_emepleado() {
+        return id_emepleado;
+    }
+    public void setId_emepleado(int id_emepleado) {
+        this.id_emepleado = id_emepleado;
+    }
+
+    public String getNom_empleado() {
+        return nom_empleado;
+    }
+    public void setNom_empleado(String nom_empleado) {
+        this.nom_empleado = nom_empleado;
+    }
+
+    public String getRfc() {
+        return rfc;
+    }
+    public void setRfc(String rfc) {
+        this.rfc = rfc;
+    }
+
+    public float getSalario() {
+        return salario;
+    }
+    public void setSalario(float salario) {
+        this.salario = salario;
+    }
+
+    public String getTelefono() {
+        return telefono;
+    }
+    public void setTelefono(String telefono) {
+        this.telefono = telefono;
+    }
+
+    public String getDireccion() {
+        return direccion;
+    }
+    public void setDireccion(String direccion) {
+        this.direccion = direccion;
+    }
     public void insertar(){
         String query = "insert into empleado(nom_empleado,rfc,salario,telefono,direccion) " +
         "values('"+nom_empleado+"','"+rfc+"',"+salario+",'"+telefono+"','"+direccion+"')";
